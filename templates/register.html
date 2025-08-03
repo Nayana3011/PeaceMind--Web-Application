@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e8f0f8;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .form-container {
+        width: 100%;
+        max-width: 480px;
+        background-color: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
+      }
+
+      h1 {
+        text-align: center;
+        color: #003366;
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="password"] {
+        width: calc(100% - 24px);
+        padding: 8px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #003366;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #005f79;
+      }
+
+      .radio-group {
+        margin-bottom: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .radio-group input[type="radio"] {
+        display: none;
+      }
+
+      .radio-group label {
+        position: relative;
+        padding: 10px 20px;
+        border: 2px solid #ccc;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 14px;
+        color: #333;
+        background-color: #f9f9f9;
+      }
+
+      .radio-group input[type="radio"]:checked + label {
+        background-color: #003366;
+        color: white;
+        border-color: #003366;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Register</h1>
+
+      <!-- User Form -->
+      <form id="userForm" method="POST" action="/register">
+        <input type="hidden" name="role" value="user" />
+
+        <label for="user_first_name">First Name:</label>
+        <input type="text" id="user_first_name" name="first_name" required />
+
+        <label for="user_last_name">Last Name:</label>
+        <input type="text" id="user_last_name" name="last_name" required />
+
+        <label for="user_email">Email:</label>
+        <input type="email" id="user_email" name="email" required />
+
+        <label for="user_phone">Phone Number:</label>
+        <input type="tel" id="user_phone" name="phone" />
+
+        <label for="user_password">Password:</label>
+        <input type="password" id="user_password" name="password" required />
+
+        <label for="user_confirm_password">Confirm Password:</label>
+        <input
+          type="password"
+          id="user_confirm_password"
+          name="confirm_password"
+          required
+        />
+
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("static/bgimage.jpeg"); /* Replace with your image */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: #333;
+      }
+
+      /* Top Sidebar (Navigation Bar) */
+      .sidebar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #003366; /* Airline-inspired blue */
+        color: white;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .sidebar h2 {
+        font-size: 1.6em;
+        color: #ffd700; /* Gold for premium feel */
+        margin-right: 40px;
+      }
+
+      .sidebar a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        padding: 10px 15px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      .sidebar a:hover {
+        background-color: #ffcc00; /* Gold on hover */
+      }
+
+      /* Main Content */
+      .main-content-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 60px); /* Adjust for navbar height */
+        margin-top: 60px; /* Match navbar height */
+        padding: 20px;
+      }
+
+      .main-content {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+        width: 90%;
+        max-width: 800px; /* Restrict the content width */
+        text-align: center;
+      }
+
+      h1 {
+        color: #003366;
+        margin-bottom: 20px;
+      }
+
+      .section {
+        margin-bottom: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #003366;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #00509e;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .main-content {
+          width: 100%;
+          margin: 10px;
+        }
+
+        .sidebar {
+          flex-direction: column;
+          padding: 20px;
+        }
+
+        .sidebar a {
+          margin: 8px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <a href="/stress_detection">Detection</a>
+      <a href="/">Logout</a>
+    </div>
+
+    <div class="main-content-wrapper">
+      <div class="main-content">
+        {% block content %}
+        <h1>Welcome to PeaceMind</h1>
+        <div class="section">
+          <p>
+            This page helps you monitor and detect stress levels in real time.
+            Your well-being is our priority—let’s work together towards a
+            stress-free life.
+          </p>
+        </div>
+        {% endblock %}
+      </div>
+    </div>
+  </body>
+</html>
