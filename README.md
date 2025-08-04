@@ -3,10 +3,15 @@ PeaceMind Web is an AI-powered web application that detects and classifies stres
 The system is built with a Flask backend and integrates a CNN-based model trained on facial emotion datasets. It supports secure login and registration via Firebase Authentication and enables emotion logging and session tracking for better stress monitoring over time.
 
 Key Features
+
 Facial Emotion Detection from uploaded images or webcam input
+
 Real-time stress classification based on negative emotion frequency
+
 Firebase Authentication for user login and registration
+
 Session history tracking via backend APIs for long-term emotional monitoring
+
 Stress relief suggestions based on detected emotional state
 
 Tech Stack
